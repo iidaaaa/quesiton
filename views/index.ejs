@@ -1,0 +1,49 @@
+
+<html>
+<head>
+<title><%= title %></title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="a.css">
+</head>
+<body>
+    <h1>主観評価</h1>
+    <li>顔画像と音声の親和性の評価をお願いします．</li>
+    <li>４０問あります．</li>
+    <li>一番下に”送信する”ボタンがあります．</li>
+    <!-- <li><%= files_name %></li> -->
+    <br>
+    <br>
+    <hr>
+    <form action="/" method="post">
+
+    <% files_name.forEach(function (value, key) { %>
+        <% var wav_file = glob.sync(value + "/*"); %>
+        <% var file_length = wav_file.length %>
+        <% var random_file = Math.floor(Math.random() * (file_length - 0)) + 0; %>
+
+        <!-- <%= wav_file[random_file] %> -->
+        <% file = wav_file[random_file].replace('public/', '').replace('.jpg','').replace('.wav', ''); %>
+        <h1><%= key+1 %></h1>
+        <!-- <%= file %> -->
+        <figure>
+            <img class="lazy" src="/<%= file %>.jpg" width="300" height="300" alt='1'/>
+            <audio controls src="/<%= file %>.wav">
+            
+        </figure>
+            <p>評価<br>
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=1> ふさわしい
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=2> ややふさわしい
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=3> ややふさわしくない
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=4> ふさわしくない
+            </p>
+        <br>
+        <hr>
+        
+    <% }); %>
+    <p><input type="submit" value="送信する"></p>
+    </form>
+
+    
+
+</body>
+</html>

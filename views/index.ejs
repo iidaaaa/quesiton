@@ -8,8 +8,9 @@
 <body>
     <h1>主観評価</h1>
     <li>顔画像と音声の親和性の評価をお願いします．</li>
-    <li>４０問あります．</li>
-    <li>一番下に”送信する”ボタンがあります．</li>
+    <li>全部で，４０問あります．</li>
+    <li>全て回答ができましたら，一番下に”送信する”ボタンを押してください．</li>
+    <li>親和性の評価では，”ふさわしくない”，”ややふさわしくない”，”ややふさわしい”，”ふさわしい”の４段階で評価をしてください．</li>
     <!-- <li><%= files_name %></li> -->
     <br>
     <br>
@@ -31,10 +32,10 @@
             
         </figure>
             <p>評価<br>
-                <input type="radio" name="<%= file.replace('media/', '') %>" value=1> ふさわしい
-                <input type="radio" name="<%= file.replace('media/', '') %>" value=2> ややふさわしい
-                <input type="radio" name="<%= file.replace('media/', '') %>" value=3> ややふさわしくない
-                <input type="radio" name="<%= file.replace('media/', '') %>" value=4> ふさわしくない
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=1> ふさわしくない
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=2> ややふさわしくない
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=3> ややふさわしい
+                <input type="radio" name="<%= file.replace('media/', '') %>" value=4> ふさわしい
             </p>
         <br>
         <hr>

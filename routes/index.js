@@ -4,9 +4,11 @@ const fs = require("fs");
 
 var data = new Date()
 
+router.get('/', function(req, res){
+  res.render('start.ejs');
+});
 
-
-router.get('/', function(req, res) {
+router.get('/next', function(req, res) {
 
     const query = req.query.p;
     const shuffle = ([...array]) => {
